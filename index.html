@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INVERSIONESJM - Studio IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#05070A;color:#E2E8F0;display:flex;min-height:100vh}
+.sidebar{width:240px;background:#0A0E18;border-right:1px solid rgba(255,255,255,0.06);padding:20px 14px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.logo-icon{width:32px;height:32px;background:#FFD700;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:13px}
+.logo-text{font-weight:800;font-size:13px;letter-spacing:0.5px;color:#fff}
+.nav{display:flex;flex-direction:column;gap:6px;flex:1}
+.nav-btn{width:100%;text-align:left;padding:10px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#8A94A8;font-size:13px;font-weight:500;cursor:pointer}
+.nav-btn.active{background:#141A28;color:#fff;border-color:rgba(255,255,255,0.06)}
+.main{flex:1;padding:32px;overflow:auto}
+.header h1{font-size:26px;font-weight:800;color:#fff}
+.input-row{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+.input-tema{flex:1;min-width:260px;background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
+.input-cant{width:170px;background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
+.btn-gold{background:#FFD700;color:#000;font-weight:700;font-size:14px;padding:14px 24px;border-radius:12px;border:none;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:#141A28;border:1px solid rgba(255,255,255,0.06);border-radius:16px;min-height:210px}
+.card-head{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:600;color:#fff}
+.card-body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:160px;color:#5A657A;font-size:13px;text-align:center;padding:20px}
+.footer{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#5A657A}
+.footer a{color:#8A94A8;text-decoration:none;cursor:pointer}
+.footer a:hover{color:#FFD700}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal.active{display:flex}
+.modal-box{background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;max-width:860px;width:100%;max-height:85vh;overflow:auto;padding:28px}
+.modal-box h2{color:#fff;font-size:20px;margin-bottom:4px}
+.modal-box .c{color:#FFD700;font-size:12px;margin-bottom:16px}
+.modal-box p,.modal-box li{color:#9AA6BB;font-size:13.5px;line-height:1.7;margin-bottom:8px}
+.modal-box h3{color:#fff;font-size:14px;margin:16px 0 6px}
+.btn-close{margin-top:18px;background:#141A28;color:#fff;border:1px solid rgba(255,255,255,0.08);padding:10px 18px;border-radius:10px;cursor:pointer}
+@media(max-width:800px){body{flex-direction:column}.sidebar{width:100%;height:auto;position:relative}.grid{grid-template-columns:1fr}.input-row{flex-direction:column}.input-cant{width:100%}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="logo"><div class="logo-icon">JM</div><div class="logo-text">INVERSIONESJM</div></div>
+  <div class="nav">
+    <button class="nav-btn active" data-view="studio">Studio IA</button>
+    <button class="nav-btn" data-view="cola">Cola</button>
+    <button class="nav-btn" data-view="biblioteca">Biblioteca</button>
+    <button class="nav-btn" data-view="blog">Blog</button>
+    <button class="nav-btn" data-view="regalos">Regalos</button>
+  </div>
+  <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#5A657A;line-height:1.5">
+    inversionesjm.pe@gmail.com<br>+51 943983596<br>
+    <a href="https://wa.me/51943983596" target="_blank" style="display:block;margin-top:10px;background:#FFD700;color:#000;text-align:center;padding:9px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none">WhatsApp Directo</a>
+  </div>
+</div>
+
+<div class="main">
+  <div id="view-studio">
+    <div class="header"><h1>Studio IA</h1></div>
+    <div class="input-row">
+      <input class="input-tema" id="tema" placeholder="Escribe tu tema: ej. criptomonedas que subirán estos días">
+      <input class="input-cant" id="cantidad" type="number" min="1" step="1" placeholder="Cantidad: ej. 5">
+      <button class="btn-gold" onclick="generar()">Generar ideas</button>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="card-head">Ideas</div><div class="card-body" id="ideas-body">Escribe un tema arriba para empezar</div></div>
+      <div class="card"><div class="card-head">Guion</div><div class="card-body">Tu guion aparecerá aquí</div></div>
+      <div class="card"><div class="card-head">Video / Carrusel</div><div class="card-body">Tu video aparecerá aquí</div></div>
+      <div class="card"><div class="card-head">Publicar</div><div class="card-body">Nada para publicar</div></div>
+    </div>
+    <div class="footer">
+      <a onclick="openModal('terminos')">Términos y Condiciones</a>
+      <a onclick="openModal('privacidad')">Política de Privacidad</a>
+      <a onclick="openModal('descargo')">Descargo de Responsabilidad</a>
+      <a onclick="openModal('contacto')">Contacto</a>
+      <span style="margin-left:auto">© 2026 INVERSIONESJM</span>
+    </div>
+  </div>
+  <div id="view-cola" style="display:none"><div class="header"><h1>Cola</h1></div><div class="card"><div class="card-body">Aún no hay publicaciones programadas</div></div></div>
+  <div id="view-biblioteca" style="display:none"><div class="header"><h1>Biblioteca</h1></div><div class="card"><div class="card-body">Tu biblioteca está vacía</div></div></div>
+  <div id="view-blog" style="display:none"><div class="header"><h1>Blog</h1></div><div class="card"><div class="card-body">Aún no hay artículos publicados</div></div></div>
+  <div id="view-regalos" style="display:none"><div class="header"><h1>Regalos</h1></div><div class="card"><div class="card-body">Aún no hay landing creadas</div></div></div>
+</div>
+
+<div class="modal" id="modal-terminos"><div class="modal-box">
+<h2>Términos y Condiciones</h2><div class="c">INVERSIONESJM | inversionesjm.pe@gmail.com | +51 943983596 | Lima, Perú</div>
+<h3>1. Titular y Objeto</h3><p>Sitio operado por INVERSIONESJM, proyecto de educación financiera. Ofrecemos contenido educativo sobre ahorro, finanzas personales y criptomonedas. No somos banco, financiera, casa de bolsa ni entidad regulada por SBS, SMV o BCRP.</p>
+<h3>2. Propiedad Intelectual</h3><p>Marca INVERSIONESJM, videos, artículos, plantillas y código son propiedad exclusiva. Prohibida copia sin autorización escrita.</p>
+<h3>3. Uso Correcto</h3><p>Usuario se compromete a no usar sitio para fraudes, spam, hacking o difundir información falsa. Edad mínima 18 años.</p>
+<h3>4. Limitación de Responsabilidad</h3><p>Ver Descargo de Responsabilidad. No garantizamos ganancias. Uso bajo responsabilidad del usuario.</p>
+<h3>5. Enlaces y Afiliados</h3><p>Podemos incluir enlaces afiliados. No incrementa tu costo.</p>
+<h3>6. Ley Aplicable</h3><p>Ley peruana. Jurisdicción: Lima, Perú. Última actualización: 10/08/2026.</p>
+<button class="btn-close" onclick="closeModal('terminos')">Cerrar</button>
+</div></div>
+
+<div class="modal" id="modal-privacidad"><div class="modal-box">
+<h2>Política de Privacidad - Ley 29733</h2><div class="c">Responsable: INVERSIONESJM - inversionesjm.pe@gmail.com</div>
+<h3>Qué datos recolectamos</h3><p>Nombre, email, WhatsApp cuando solicitas regalo, IP y cookies de navegación. No pedimos datos bancarios ni contraseñas.</p>
+<h3>Para qué los usamos</h3><ul><li>Enviarte plantillas y regalos solicitados</li><li>Responder soporte por WhatsApp +51 943983596</li><li>Mejorar web y medir audiencia</li><li>Mostrar anuncios relevantes con Google AdSense</li></ul>
+<h3>Cookies y Google AdSense</h3><p>Usamos cookies propias y de terceros (Google AdSense / DoubleClick DART). Google puede mostrarte anuncios según visitas previas. Puedes rechazar cookies en tu navegador. Más info: policies.google.com/technologies/ads</p>
+<h3>Dónde se guardan</h3><p>Hosting en Netlify (USA/UE) con SSL. Formularios con Tally Forms. Retención 24 meses.</p>
+<h3>Tus derechos ARCO</h3><p>Acceso, Rectificación, Cancelación, Oposición. Escríbenos a inversionesjm.pe@gmail.com con asunto "ARCO - Mi nombre". Respondemos en 10 días hábiles según ley peruana.</p>
+<h3>Menores</h3><p>Prohibido para menores de 14 años.</p>
+<button class="btn-close" onclick="closeModal('privacidad')">Cerrar</button>
+</div></div>
+
+<div class="modal" id="modal-descargo"><div class="modal-box">
+<h2>Descargo de Responsabilidad Financiera</h2><div class="c">INVERSIONESJM - Solo educativo</div>
+<p><strong>ADVERTENCIA: INVERSIONESJM NO es asesor financiero autorizado, no es banco, no es SAF, no está supervisado por SBS, SMV ni BCRP.</strong></p>
+<h3>Contenido solo educativo</h3><p>Todo video, post, blog y PDF es solo informativo y educativo. No es recomendación de compra, venta o inversión en criptomonedas, acciones o cualquier activo.</p>
+<h3>Riesgo alto</h3><p>Criptomonedas e inversiones tienen riesgo de pérdida total. Alta volatilidad. Resultados pasados no garantizan futuros. Puedes perder todo tu capital.</p>
+<h3>Tu responsabilidad</h3><p>Tú decides 100% tus inversiones. Nosotros no somos responsables por pérdidas directas o indirectas. Consulta siempre a un profesional certificado antes de invertir.</p>
+<h3>No somos responsables de plataformas externas</h3><p>No controlamos Binance, BCP, Yape, etc. Verifica siempre en fuente oficial.</p>
+<button class="btn-close" onclick="closeModal('descargo')">Cerrar</button>
+</div></div>
+
+<div class="modal" id="modal-contacto"><div class="modal-box">
+<h2>Contacto y Soporte</h2><div class="c">Respuesta 24h hábiles</div>
+<p><strong>Email:</strong> inversionesjm.pe@gmail.com</p>
+<p><strong>WhatsApp:</strong> +51 943983596 - <a href="https://wa.me/51943983596" target="_blank" style="color:#FFD700">Abrir WhatsApp</a></p>
+<p><strong>Instagram:</strong> @inversionesjm.pe</p>
+<p><strong>Horario:</strong> Lunes a Viernes 9:00-18:00 PET Lima</p>
+<p><strong>Soporte:</strong> Plantillas, regalos, solicitudes ARCO, reportes.</p>
+<button class="btn-close" onclick="closeModal('contacto')">Cerrar</button>
+</div></div>
+
+<script>
+function generar(){
+ const t=document.getElementById('tema').value.trim();
+ const c=document.getElementById('cantidad').value;
+ if(!t){alert('Escribe un tema');return}
+ if(!c || c<1){alert('Pon cantidad mayor a 0');return}
+ document.getElementById('ideas-body').innerHTML='Generadas '+c+' ideas para: '+t+'<br><br>Listo para crear contenido real.';
+}
+document.querySelectorAll('.nav-btn').forEach(b=>{
+ b.addEventListener('click',()=>{
+  document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.querySelectorAll('[id^=view-]').forEach(v=>v.style.display='none');
+  document.getElementById('view-'+b.dataset.view).style.display='block';
+ })
+});
+function openModal(id){document.getElementById('modal-'+id).classList.add('active')}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('active')}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')}))
+</script>
+</body>
+</html>
