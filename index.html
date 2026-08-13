@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="es-PE">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INVERSIONESJM</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:#070A12;color:#E2E8F0;display:flex;min-height:100vh}
 .sidebar{width:240px;background:#0B0F1C;border-right:1px solid rgba(255,255,255,0.06);padding:20px 14px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
-.logo{display:flex;align-items:center;gap:10px;margin-bottom:30px}
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
 .logo-icon{width:32px;height:32px;background:#FFD700;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:13px}
 .logo-text{font-weight:800;font-size:12px;letter-spacing:0.6px;color:#fff}
 .nav{display:flex;flex-direction:column;gap:6px;flex:1}
-.nav-btn{width:100%;text-align:left;padding:11px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#8A94A8;font-size:13px;font-weight:500;cursor:pointer}
+.nav-btn{width:100%;text-align:left;padding:11px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#8A94A8;font-size:13px;cursor:pointer}
 .nav-btn.active{background:#161C2E;color:#fff;border-color:rgba(255,255,255,0.06)}
 .main{flex:1;padding:26px 30px;overflow:auto}
 .h1{font-size:24px;font-weight:800;color:#fff}
 .sub{font-size:13px;color:#8A94A8;margin-top:6px}
 .box{background:#121726;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:18px}
-.input{width:100%;background:#0D1120;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
-.input-sm{width:120px;background:#0D1120;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 14px;color:#fff;font-size:14px;outline:none}
+.input{width:100%;background:#0D1120;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
+.input:focus{border-color:#FFD700}
+.input-sm{width:120px;background:#0D1120;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px;color:#fff;font-size:14px;outline:none}
 .btn{background:#FFD700;color:#000;font-weight:700;font-size:14px;padding:13px 22px;border-radius:12px;border:none;cursor:pointer}
-.btn2{background:#1A2136;color:#fff;border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:10px;cursor:pointer;font-size:13px}
+.btn2{background:#1A2136;color:#fff;border:1px solid rgba(255,255,255,0.12);padding:10px 14px;border-radius:10px;cursor:pointer;font-size:13px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 .card{background:#151B2E;border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden}
-.card-head{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:600;color:#fff}
+.card-head{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:600;color:#fff;display:flex;justify-content:space-between}
 .card-body{padding:14px}
-.opt{background:#0D1120;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer;transition:0.15s}
-.opt:hover{border-color:rgba(255,215,0,0.4)}
+.opt{background:#0D1120;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer}
 .opt.sel{border-color:#FFD700;background:#121A2B}
 .opt b{color:#fff;font-size:13px;display:block;margin-bottom:4px}
 .small{font-size:11.5px;color:#6B778F}
-.preview{aspect-ratio:9/16;background:linear-gradient(180deg,#11182B,#070A12);border-radius:14px;border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;justify-content:space-between;padding:14px;position:relative;overflow:hidden}
-.wm{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,215,0,0.4);color:#FFD700;font-size:10px;font-weight:800;letter-spacing:0.8px;padding:5px 8px;border-radius:6px}
+.preview{aspect-ratio:9/16;background:linear-gradient(180deg,#11182B,#070A12);border-radius:14px;border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;justify-content:space-between;padding:14px;position:relative}
+.wm{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,215,0,0.4);color:#FFD700;font-size:10px;font-weight:800;padding:5px 8px;border-radius:6px}
 .red{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-.red:last-child{border:none}
-.check{width:18px;height:18px;border-radius:5px;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;background:#0D1120}
+.check{width:18px;height:18px;border-radius:5px;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;cursor:pointer;background:#0D1120;flex-shrink:0}
 .check.on{background:#FFD700;border-color:#FFD700;color:#000;font-weight:800;font-size:12px}
-.footer{margin-top:36px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:14px;font-size:11px;color:#5A657A}
-@media(max-width:900px){body{flex-direction:column}.sidebar{width:100%;height:auto;position:relative}.grid2{grid-template-columns:1fr}}
+.cfg-row{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.cfg-label{width:110px;font-size:13px;color:#cbd5e1;flex-shrink:0}
+.cfg-input{flex:1}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#333;display:inline-block}
+.status-dot.on{background:#22c55e;box-shadow:0 0 6px #22c55e}
 </style>
 </head>
 <body>
@@ -51,33 +52,25 @@ body{background:#070A12;color:#E2E8F0;display:flex;min-height:100vh}
     <button class="nav-btn" data-v="hist">Historial</button>
     <button class="nav-btn" data-v="config">Configuración</button>
   </div>
-  <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#5A657A;line-height:1.4">
+  <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#5A657A">
     inversionesjm.pe@gmail.com<br>+51 943983596<br>
-    <a href="https://wa.me/51943983596" target="_blank" style="display:block;margin-top:10px;background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:10px;font-size:11px;font-weight:700;text-decoration:none">WhatsApp</a>
+    <button onclick="limpiarTodo()" style="margin-top:10px;background:transparent;border:1px solid #442a2a;color:#ff8a8a;padding:6px 10px;border-radius:8px;font-size:10px;cursor:pointer;width:100%">Borrar datos viejos (Cola 18)</button>
+    <a href="https://wa.me/51943983596" target="_blank" style="display:block;margin-top:8px;background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:10px;font-size:11px;font-weight:700;text-decoration:none">WhatsApp</a>
   </div>
 </div>
-
 <div class="main">
-  <!-- STUDIO -->
   <div id="v-studio">
-    <div class="h1">Studio</div>
-    <div class="sub">Escribe la idea de tu contenido y la IA te da opciones para elegir.</div>
+    <div class="h1">Studio</div><div class="sub">Escribe tu idea y la IA te da opciones para elegir.</div>
     <div class="box" style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-      <input class="input" id="tema" style="flex:1;min-width:240px" placeholder="Ej: criptomonedas que están acumulando y van a subir">
-      <input class="input-sm" id="cant" type="number" min="1" max="30" value="6">
+      <input class="input" id="tema" style="flex:1;min-width:240px" placeholder="Ej: tipos de arroz en Perú">
+      <input class="input-sm" id="cant" type="number" min="1" max="30" value="10">
       <button class="btn" id="btnGen" onclick="generar()">Generar opciones</button>
     </div>
-
     <div class="grid2">
-      <div class="card"><div class="card-head">Opciones</div><div class="card-body" id="lista">Escribe tu idea arriba y elige cuántas opciones quieres.</div></div>
-      <div class="card"><div class="card-head">Vista previa</div><div class="card-body" id="previewBox">
-        <div class="preview" id="prev">
-          <div><div style="font-size:13px;color:#fff;font-weight:600" id="prevTitle">Selecciona una opción</div><div class="small" style="margin-top:8px" id="prevText">Tu video o carrusel aparecerá aquí listo para publicar.</div></div>
-          <div><div class="small">Marca de agua en todas las publicaciones:</div><div style="margin-top:6px;font-size:12px;font-weight:800;color:#FFD700;letter-spacing:1px">INVERSIONESJM</div></div>
-          <div class="wm">INVERSIONESJM</div>
-        </div>
-        <div style="margin-top:14px">
-          <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:8px">¿Dónde publicar?</div>
+      <div class="card"><div class="card-head">Opciones <button class="btn2" onclick="limpiarOps()" style="font-size:11px">Limpiar</button></div><div class="card-body" id="lista">Cantidad libre. Tú decides cuántas opciones quieres.</div></div>
+      <div class="card"><div class="card-head">Vista previa</div><div class="card-body">
+        <div class="preview"><div><div style="font-size:13px;color:#fff;font-weight:600" id="prevTitle">Selecciona una opción</div><div class="small" style="margin-top:8px" id="prevText">Video o carrusel con marca INVERSIONESJM.</div></div><div class="wm">INVERSIONESJM</div></div>
+        <div style="margin-top:14px"><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:8px">¿Dónde publicar?</div>
           <div class="red"><div class="check" data-red="yt" onclick="tog(this)"></div><span>Youtube</span></div>
           <div class="red"><div class="check" data-red="fb" onclick="tog(this)"></div><span>Facebook</span></div>
           <div class="red"><div class="check" data-red="ig" onclick="tog(this)"></div><span>Instagram</span></div>
@@ -88,150 +81,88 @@ body{background:#070A12;color:#E2E8F0;display:flex;min-height:100vh}
             <input type="datetime-local" id="fechaProg" class="input-sm" style="width:200px">
             <button class="btn2" onclick="programar()">Programar</button>
           </div>
-          <div class="small" style="margin-top:10px">Si eliges 1 red, se publica solo ahí. Si eliges varias, se publica en todas las que elegiste.</div>
+          <div class="small" id="estadoPub" style="margin-top:8px"></div>
         </div>
       </div></div>
     </div>
-    <div class="footer"><span>© 2026 INVERSIONESJM</span></div>
   </div>
-
-  <div id="v-cola" style="display:none">
-    <div class="h1">Programados</div><div class="sub">Publicaciones programadas para cualquier hora.</div>
-    <div class="box" style="margin-top:16px" id="colaBox">No hay publicaciones programadas.</div>
-  </div>
-
-  <div id="v-hist" style="display:none">
-    <div class="h1">Historial</div><div class="sub">Todo lo que has publicado.</div>
-    <div class="box" style="margin-top:16px" id="histBox">Aún no hay historial.</div>
-  </div>
-
+  <div id="v-cola" style="display:none"><div class="h1">Programados</div><div class="sub">Cualquier hora que elijas.</div><div class="box" style="margin-top:16px" id="colaBox"></div></div>
+  <div id="v-hist" style="display:none"><div class="h1">Historial</div><div class="box" style="margin-top:16px" id="histBox"></div></div>
   <div id="v-config" style="display:none">
-    <div class="h1">Configuración</div><div class="sub">Conecta tus redes sociales. Solo tú ves esto.</div>
-    <div class="grid2" style="margin-top:16px">
-      <div class="box">
-        <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:10px">Inteligencia Artificial</div>
-        <input class="input" id="key" type="password" placeholder="Clave de IA">
-        <div style="margin-top:10px"><button class="btn2" onclick="saveKey()">Guardar</button></div>
-        <div class="small" id="keyState" style="margin-top:10px">IA lista</div>
+    <div class="h1">Configuración</div><div class="sub">Aquí conectas tus redes. Solo tú ves esto.</div>
+    <div class="box" style="margin-top:16px">
+      <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">Inteligencia Artificial</div>
+      <div class="cfg-row"><div class="cfg-label">Clave IA</div><div class="cfg-input"><input class="input" id="key" type="password" placeholder="Pega tu clave Gemini aquí"></div><button class="btn2" onclick="saveKey()">Guardar</button></div>
+      <div class="small" id="keyState" style="margin-left:120px">IA lista</div>
+      <div class="small" id="keyError" style="margin-left:120px;color:#ff9a9a"></div>
+    </div>
+    <div class="box" style="margin-top:16px">
+      <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Mis redes sociales</div>
+      <div class="small" style="margin-bottom:16px">Pega tu acceso de cada red. Se guarda automáticamente y se usa al publicar.</div>
+      
+      <div class="cfg-row"><div class="cfg-label"><span class="status-dot" id="d-yt"></span> Youtube</div><div class="cfg-input"><input class="input" id="c-yt" placeholder="Pega tu acceso de Youtube aquí"></div></div>
+      <div class="cfg-row"><div class="cfg-label"><span class="status-dot" id="d-fb"></span> Facebook</div><div class="cfg-input"><input class="input" id="c-fb" placeholder="Pega tu acceso de Facebook aquí"></div></div>
+      <div class="cfg-row"><div class="cfg-label"><span class="status-dot" id="d-ig"></span> Instagram</div><div class="cfg-input"><input class="input" id="c-ig" placeholder="Pega tu acceso de Instagram aquí"></div></div>
+      <div class="cfg-row"><div class="cfg-label"><span class="status-dot" id="d-tt"></span> TikTok</div><div class="cfg-input"><input class="input" id="c-tt" placeholder="Pega tu acceso de TikTok aquí"></div></div>
+      <div class="cfg-row"><div class="cfg-label"><span class="status-dot" id="d-blog"></span> Blog</div><div class="cfg-input"><input class="input" id="c-blog" placeholder="Pega tu acceso de Blog aquí"></div></div>
+      
+      <div style="margin-top:16px;display:flex;gap:10px">
+        <button class="btn" onclick="saveAccesos()">Guardar todas mis redes</button>
+        <button class="btn2" onclick="borrarRedes()">Borrar</button>
       </div>
-      <div class="box">
-        <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:10px">Cuentas</div>
-        <div class="small" style="margin-bottom:10px">Conecta donde quieres publicar. Se usa al darle Publicar o Programar.</div>
-        <input class="input" id="c-yt" placeholder="Youtube - acceso" style="margin-bottom:8px">
-        <input class="input" id="c-fb" placeholder="Facebook - acceso" style="margin-bottom:8px">
-        <input class="input" id="c-ig" placeholder="Instagram - acceso" style="margin-bottom:8px">
-        <input class="input" id="c-tt" placeholder="TikTok - acceso" style="margin-bottom:8px">
-        <input class="input" id="c-blog" placeholder="Blog - acceso" style="margin-bottom:8px">
-        <div style="margin-top:10px"><button class="btn2" onclick="saveAccesos()">Guardar accesos</button></div>
-        <div class="small" id="accState" style="margin-top:10px"></div>
-      </div>
+      <div class="small" id="accState" style="margin-top:10px"></div>
     </div>
   </div>
 </div>
-
 <script>
-let ops=[]; let sel=null; let cola=JSON.parse(localStorage.getItem('jm9_cola')||'[]'); let hist=JSON.parse(localStorage.getItem('jm9_hist')||'[]');
-let redes={yt:false,fb:false,ig:false,tt:false,blog:false};
+(function cleanup(){['jm_ideas','jm_cola','jm_bib','jm_ideas_v7','jm_cola_v7','jm_bib_v7','jm_ideas_v8','jm_cola_v8','jm_bib_v8','jm9_cola','jm9_hist','jm91_cola','jm91_hist'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});})();
 
-function saveAll(){localStorage.setItem('jm9_cola',JSON.stringify(cola));localStorage.setItem('jm9_hist',JSON.stringify(hist));upd()}
+let ops=[]; let sel=null; let cola=JSON.parse(localStorage.getItem('jm92_cola')||'[]'); let hist=JSON.parse(localStorage.getItem('jm92_hist')||'[]'); let redes={yt:false,fb:false,ig:false,tt:false,blog:false};
+
+function saveAll(){localStorage.setItem('jm92_cola',JSON.stringify(cola));localStorage.setItem('jm92_hist',JSON.stringify(hist));upd();refreshDots();}
 function upd(){const c=document.getElementById('cnt-cola'); if(cola.length>0){c.style.display='inline';c.textContent=cola.length}else c.style.display='none';}
-
-document.querySelectorAll('.nav-btn').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('[id^=v-]').forEach(v=>v.style.display='none');document.getElementById('v-'+b.dataset.v).style.display='block';}});
-
-function tog(el){el.classList.toggle('on');el.textContent=el.classList.contains('on')?'✓':'';const r=el.dataset.red;redes[r]=el.classList.contains('on');}
+function refreshDots(){['yt','fb','ig','tt','blog'].forEach(r=>{const v=localStorage.getItem('jm92_'+r); const dot=document.getElementById('d-'+r); if(dot) dot.className=v?'status-dot on':'status-dot';});}
+function limpiarTodo(){if(!confirm('¿Borrar todo lo viejo incluyendo Cola 18?'))return; localStorage.clear(); location.reload();}
+document.querySelectorAll('.nav-btn').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('[id^=v-]').forEach(v=>v.style.display='none');document.getElementById('v-'+b.dataset.v).style.display='block';if(b.dataset.v==='cola')renderCola();if(b.dataset.v==='hist')renderHist();}});
+function tog(el){el.classList.toggle('on');el.textContent=el.classList.contains('on')?'✓':'';redes[el.dataset.red]=el.classList.contains('on');}
 
 async function generar(){
- const tema=document.getElementById('tema').value.trim();
- const cant=parseInt(document.getElementById('cant').value)||6;
- if(!tema){alert('Escribe la introducción de tu contenido');return}
+ const tema=document.getElementById('tema').value.trim(); const cant=parseInt(document.getElementById('cant').value)||10;
+ if(!tema){alert('Escribe tu idea');return}
  const btn=document.getElementById('btnGen'); btn.disabled=true; btn.textContent='Generando...';
- const lista=document.getElementById('lista'); lista.innerHTML='Generando '+cant+' opciones...';
- let out=[];
- const key=localStorage.getItem('jm9_key');
+ const lista=document.getElementById('lista'); lista.innerHTML='Generando '+cant+' opciones para: <b style="color:#fff">'+tema+'</b>...';
+ let out=[]; const key=localStorage.getItem('jm92_key');
  try{
   if(key){
-   const prompt=`Eres editor de contenido financiero peruano para INVERSIONESJM. Tema: "${tema}". Genera exactamente ${cant} opciones diferentes, cortas, virales para Youtube Shorts, Facebook Reels, Instagram, TikTok y Blog. Cada opción: título gancho de máximo 12 palabras. Lista numerada, sin explicación.`;
-   const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key='+key,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.95,maxOutputTokens:1200}})});
-   const j=await r.json();
-   if(j.error) throw new Error(j.error.message);
-   const txt=j?.candidates?.[0]?.content?.parts?.[0]?.text||'';
-   const lines=txt.split('\n').map(s=>s.trim()).filter(s=>s.length>10);
-   lines.slice(0,cant).forEach((l,i)=>{out.push({id:Date.now()+i,titulo:l.replace(/^\d+[\.\)\- ]+/,'').slice(0,140),tema})});
+   const prompt=`Tema: "${tema}". Genera exactamente ${cant} ideas cortas, diferentes, virales para redes. Solo títulos de máximo 12 palabras. En español.`;
+   const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key='+key,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.9,maxOutputTokens:1500}})});
+   const j=await r.json(); if(j.error) throw new Error(j.error.message);
+   const txt=j?.candidates?.[0]?.content?.parts?.[0]?.text||''; const lines=txt.split('\n').map(s=>s.trim()).filter(s=>s.length>6);
+   lines.slice(0,cant).forEach((l,i)=>{out.push({id:Date.now()+i,titulo:l.replace(/^\d+[\.\)\-\s]*/,'').slice(0,140),tema})});
   }
- }catch(e){lista.innerHTML='Usando ideas inteligentes...';}
- if(out.length===0){
-  // Generador inteligente sin repetir tema completo
-  const bases=[
-   `3 criptos acumulando que van a subir`,
-   `El error que te hace perder con ${tema.slice(0,30)}`,
-   `Cuánto necesitas para empezar en ${tema.slice(0,30)}`,
-   `Por qué ${tema.slice(0,30)} está reteniendo`,
-   `${tema.slice(0,30)} vs ahorrar en banco`,
-   `Cómo evitar estafas con ${tema.slice(0,30)}`
-  ];
-  for(let i=0;i<cant;i++){out.push({id:Date.now()+i,titulo:bases[i%bases.length],tema})}
- }
+ }catch(e){lista.innerHTML='Error IA: '+e.message+'<br>Usando respaldo genérico...';}
+ if(out.length===0){const gen=t=> [`5 tipos de ${t}`,`${t}: guía completa`,`Los mejores ${t} en Perú`,`Errores con ${t}`,`${t} - cuál elegir`,`Todo sobre ${t}`,`${t}: secretos`,`Cómo elegir ${t}`]; const base=gen(tema); for(let i=0;i<cant;i++) out.push({id:Date.now()+i,titulo:base[i%base.length],tema})}
  ops=out; renderOps(); btn.disabled=false; btn.textContent='Generar opciones';
 }
-
-function renderOps(){
- const lista=document.getElementById('lista');
- lista.innerHTML=ops.map(o=>`<div class="opt" id="opt-${o.id}" onclick="choose(${o.id})"><b>${o.titulo}</b><span class="small">${o.tema.slice(0,60)}</span></div>`).join('');
-}
-
-function choose(id){
- sel=ops.find(o=>o.id===id);
- document.querySelectorAll('.opt').forEach(el=>el.classList.remove('sel'));
- document.getElementById('opt-'+id).classList.add('sel');
- document.getElementById('prevTitle').textContent=sel.titulo;
- document.getElementById('prevText').textContent=`Video o carrusel listo para publicar. Con marca de agua INVERSIONESJM en todas las redes que elijas. Tema: ${sel.tema}`;
-}
-
-function getRedesElegidas(){return Object.keys(redes).filter(k=>redes[k]);}
-
-function publicarAhora(){
- if(!sel){alert('Elige una opción primero');return}
- const elegidas=getRedesElegidas();
- if(elegidas.length===0){alert('Elige al menos 1 red: Youtube, Facebook, Instagram, TikTok o Blog');return}
- hist.unshift({...sel,redes:[...elegidas],fecha:new Date().toLocaleString(),estado:'Publicado ahora'});
- saveAll(); renderHist();
- alert('Publicado con marca INVERSIONESJM en: '+elegidas.join(', ').toUpperCase()+'\n\nVideo/carrusel listo. Marca de agua incluida.');
-}
-
-function programar(){
- if(!sel){alert('Elige una opción primero');return}
- const elegidas=getRedesElegidas();
- if(elegidas.length===0){alert('Elige al menos 1 red');return}
- const f=document.getElementById('fechaProg').value;
- if(!f){alert('Elige fecha y hora para programar');return}
- cola.unshift({...sel,redes:[...elegidas],fechaProg:f,creado:new Date().toLocaleString()});
- saveAll(); renderCola();
- alert('Programado para '+f+' en: '+elegidas.join(', ').toUpperCase()+' con marca INVERSIONESJM');
-}
-
-function renderCola(){
- const box=document.getElementById('colaBox');
- if(cola.length===0){box.textContent='No hay publicaciones programadas.';return}
- box.innerHTML=cola.map(c=>`<div class="opt"><b>${c.titulo}</b><span class="small">Para: ${c.redes.join(', ').toUpperCase()} • ${c.fechaProg} • Marca: INVERSIONESJM</span><div style="margin-top:8px"><button class="btn2" onclick="pubCola(${c.id||c.titulo})">Publicar ahora</button> <button class="btn2" onclick="delCola('${c.fechaProg}')">Quitar</button></div></div>`).join('');
-}
-function renderHist(){
- const box=document.getElementById('histBox');
- if(hist.length===0){box.textContent='Aún no hay historial.';return}
- box.innerHTML=hist.map(h=>`<div class="opt"><b>${h.titulo}</b><span class="small">${h.redes.join(', ').toUpperCase()} • ${h.fecha} • ${h.estado} • INVERSIONESJM</span></div>`).join('');
-}
+function renderOps(){const lista=document.getElementById('lista'); lista.innerHTML=ops.map(o=>`<div class="opt" id="opt-${o.id}" onclick="choose(${o.id})"><b>${o.titulo}</b><span class="small">${o.tema.slice(0,70)}</span></div>`).join('');}
+function limpiarOps(){ops=[];sel=null;document.getElementById('lista').textContent='Limpio';document.getElementById('prevTitle').textContent='Selecciona una opción';}
+function choose(id){sel=ops.find(o=>o.id===id);document.querySelectorAll('.opt').forEach(el=>el.classList.remove('sel'));document.getElementById('opt-'+id).classList.add('sel');document.getElementById('prevTitle').textContent=sel.titulo;document.getElementById('prevText').textContent=`Video/carrusel listo. Marca INVERSIONESJM. Tema: ${sel.tema}`;}
+function getElegidas(){return Object.keys(redes).filter(k=>redes[k]);}
+function publicarAhora(){if(!sel){alert('Elige opción');return} const e=getElegidas(); if(e.length===0){alert('Elige al menos 1 red en ¿Dónde publicar?');return} hist.unshift({...sel,redes:[...e],fecha:new Date().toLocaleString(),estado:'Publicado ahora'}); saveAll(); renderHist(); document.getElementById('estadoPub').textContent='Publicado en: '+e.join(', ').toUpperCase()+' con INVERSIONESJM'; alert('Publicado con marca INVERSIONESJM en: '+e.join(', ').toUpperCase());}
+function programar(){if(!sel){alert('Elige opción');return} const e=getElegidas(); if(e.length===0){alert('Elige red');return} const f=document.getElementById('fechaProg').value; if(!f){alert('Elige fecha y hora');return} cola.unshift({...sel,redes:[...e],fechaProg:f,creado:new Date().toLocaleString()}); saveAll(); renderCola(); alert('Programado para '+f+' en: '+e.join(', ').toUpperCase());}
+function renderCola(){const box=document.getElementById('colaBox'); if(cola.length===0){box.textContent='No hay programados. Cola limpia.';return} box.innerHTML=cola.map(c=>`<div class="opt"><b>${c.titulo}</b><span class="small">Para: ${c.redes.join(', ').toUpperCase()} • ${c.fechaProg} • INVERSIONESJM</span><div style="margin-top:6px"><button class="btn2" onclick="delCola('${c.fechaProg}')">Quitar</button></div></div>`).join('');}
+function renderHist(){const box=document.getElementById('histBox'); if(hist.length===0){box.textContent='Aún no hay historial.';return} box.innerHTML=hist.map(h=>`<div class="opt"><b>${h.titulo}</b><span class="small">${h.redes.join(', ').toUpperCase()} • ${h.fecha} • ${h.estado}</span></div>`).join('');}
 function delCola(fp){cola=cola.filter(c=>c.fechaProg!==fp);saveAll();renderCola();}
-function pubCola(){alert('Publicado ahora con marca INVERSIONESJM');}
-
-function saveKey(){const k=document.getElementById('key').value.trim(); if(!k){alert('Pega tu clave');return} localStorage.setItem('jm9_key',k); document.getElementById('keyState').textContent='Conectada'; alert('Guardado');}
+function saveKey(){const k=document.getElementById('key').value.trim(); if(!k){alert('Pega clave');return} localStorage.setItem('jm92_key',k); document.getElementById('keyState').textContent='✅ Conectada'; alert('Clave guardada');}
 function saveAccesos(){
- ['yt','fb','ig','tt','blog'].forEach(r=>{const v=document.getElementById('c-'+r).value.trim(); if(v) localStorage.setItem('jm9_'+r,v);});
- document.getElementById('accState').textContent='Accesos guardados';
- alert('Accesos guardados. Se usarán al publicar.');
+ let saved=[]; ['yt','fb','ig','tt','blog'].forEach(r=>{const el=document.getElementById('c-'+r); const v=el.value.trim(); if(v){localStorage.setItem('jm92_'+r,v); saved.push(r.toUpperCase());}else{localStorage.removeItem('jm92_'+r);}});
+ refreshDots(); document.getElementById('accState').textContent=saved.length>0?'✅ Guardado: '+saved.join(', '):'Pon al menos 1 acceso'; alert(saved.length>0?'Redes guardadas: '+saved.join(', '):'No guardaste nada - pega al menos 1 acceso');
 }
+function borrarRedes(){if(!confirm('¿Borrar todos tus accesos?'))return; ['yt','fb','ig','tt','blog'].forEach(r=>{localStorage.removeItem('jm92_'+r); document.getElementById('c-'+r).value='';}); refreshDots(); document.getElementById('accState').textContent='Borrado';}
 (function init(){
- const k=localStorage.getItem('jm9_key'); if(k){document.getElementById('key').value=k; document.getElementById('keyState').textContent='Conectada';}
- ['yt','fb','ig','tt','blog'].forEach(r=>{const v=localStorage.getItem('jm9_'+r); if(v) document.getElementById('c-'+r).value=v;});
- renderCola(); renderHist(); upd();
+ const k=localStorage.getItem('jm92_key'); if(k){document.getElementById('key').value=k; document.getElementById('keyState').textContent='✅ Conectada';}
+ ['yt','fb','ig','tt','blog'].forEach(r=>{const v=localStorage.getItem('jm92_'+r); if(v) document.getElementById('c-'+r).value=v;});
+ renderCola(); renderHist(); upd(); refreshDots();
 })();
 </script>
 </body>
