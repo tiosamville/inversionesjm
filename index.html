@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INVERSIONESJM - Studio IA v7</title>
+<title>INVERSIONESJM - Studio IA</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:#05070A;color:#E2E8F0;display:flex;min-height:100vh}
-.sidebar{width:250px;background:#0A0E18;border-right:1px solid rgba(255,255,255,0.06);padding:20px 14px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:auto}
-.logo{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.sidebar{width:250px;background:#0A0E18;border-right:1px solid rgba(255,255,255,0.06);padding:20px 14px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
 .logo-icon{width:34px;height:34px;background:#FFD700;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px}
 .logo-text{font-weight:800;font-size:13px;letter-spacing:0.5px;color:#fff}
 .nav{display:flex;flex-direction:column;gap:6px;flex:1}
-.nav-btn{width:100%;text-align:left;padding:11px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#8A94A8;font-size:13px;font-weight:500;cursor:pointer;transition:0.2s}
+.nav-btn{width:100%;text-align:left;padding:11px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#8A94A8;font-size:13px;font-weight:500;cursor:pointer}
 .nav-btn.active{background:#141A28;color:#fff;border-color:rgba(255,255,255,0.06)}
 .nav-btn:hover{background:#121827;color:#cbd5e1}
 .main{flex:1;padding:28px 32px;overflow:auto}
-.header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+.header{margin-bottom:8px}
 .header h1{font-size:26px;font-weight:800;color:#fff}
-.badge{background:#141A28;border:1px solid rgba(255,255,255,0.08);color:#8A94A8;font-size:11px;padding:6px 10px;border-radius:20px}
+.sub{font-size:13px;color:#8A94A8;margin-top:6px}
 .input-row{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}
 .input-tema{flex:1;min-width:260px;background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
-.input-cant{width:170px;background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
+.input-cant{width:130px;background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px;color:#fff;font-size:14px;outline:none}
 .btn-gold{background:#FFD700;color:#000;font-weight:700;font-size:14px;padding:14px 24px;border-radius:12px;border:none;cursor:pointer}
-.btn-gold:disabled{opacity:0.5;cursor:not-allowed}
-.btn-dark{background:#141A28;color:#fff;border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:10px;cursor:pointer;font-size:13px}
+.btn-gold:disabled{opacity:0.5}
+.btn-dark{background:#141A28;color:#fff;border:1px solid rgba(255,255,255,0.08);padding:9px 13px;border-radius:10px;cursor:pointer;font-size:12.5px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:#141A28;border:1px solid rgba(255,255,255,0.06);border-radius:16px;min-height:220px;display:flex;flex-direction:column}
+.card{background:#141A28;border:1px solid rgba(255,255,255,0.06);border-radius:16px;min-height:240px;display:flex;flex-direction:column}
 .card-head{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center}
 .card-body{padding:16px;flex:1;overflow:auto;color:#9AA6BB;font-size:13.5px;line-height:1.6}
 .idea-item{background:#0F141E;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer}
@@ -35,23 +35,22 @@ body{background:#05070A;color:#E2E8F0;display:flex;min-height:100vh}
 .idea-item b{color:#fff;font-size:13px;display:block;margin-bottom:4px}
 .small{font-size:12px;color:#5A657A}
 .config-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.config-card{background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px}
-.config-card h3{color:#fff;font-size:14px;margin-bottom:8px}
-.config-card p{font-size:12px;color:#8A94A8;margin-bottom:12px;line-height:1.5}
-.config-input{width:100%;background:#141A28;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;color:#fff;font-size:13px;outline:none;margin-bottom:10px}
+.config-card{background:#141A28;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:22px}
+.config-card h3{color:#fff;font-size:14px;margin-bottom:10px}
+.config-card p{font-size:12.5px;color:#8A94A8;margin-bottom:14px;line-height:1.5}
+.config-input{width:100%;background:#0A0E18;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;color:#fff;font-size:13px;outline:none;margin-bottom:10px}
+.canal{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.canal:last-child{border:none}
+.canal span{font-size:13px;color:#cbd5e1}
+.dot{width:8px;height:8px;border-radius:50%;background:#2a3448;display:inline-block;margin-right:8px}
+.dot.on{background:#22c55e;box-shadow:0 0 8px #22c55e}
 .footer{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#5A657A}
 .footer a{color:#8A94A8;text-decoration:none;cursor:pointer}
 .footer a:hover{color:#FFD700}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:100;align-items:center;justify-content:center;padding:20px}
 .modal.active{display:flex}
 .modal-box{background:#0F141E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;max-width:860px;width:100%;max-height:85vh;overflow:auto;padding:28px}
-.modal-box h2{color:#fff;font-size:20px;margin-bottom:4px}
-.modal-box .c{color:#FFD700;font-size:12px;margin-bottom:16px}
-.modal-box p,.modal-box li{color:#9AA6BB;font-size:13.5px;line-height:1.7;margin-bottom:8px}
-.modal-box h3{color:#fff;font-size:14px;margin:16px 0 6px}
-.btn-close{margin-top:18px;background:#141A28;color:#fff;border:1px solid rgba(255,255,255,0.08);padding:10px 18px;border-radius:10px;cursor:pointer}
-.tag{font-size:10px;background:#FFD700;color:#000;padding:3px 7px;border-radius:20px;font-weight:700;margin-left:8px}
-@media(max-width:900px){body{flex-direction:column}.sidebar{width:100%;height:auto;position:relative}.grid,.config-grid{grid-template-columns:1fr}.input-row{flex-direction:column}.input-cant{width:100%}}
+@media(max-width:900px){body{flex-direction:column}.sidebar{width:100%;height:auto;position:relative}.grid,.config-grid{grid-template-columns:1fr}.input-cant{width:100%}}
 </style>
 </head>
 <body>
@@ -59,327 +58,172 @@ body{background:#05070A;color:#E2E8F0;display:flex;min-height:100vh}
   <div class="logo"><div class="logo-icon">JM</div><div class="logo-text">INVERSIONESJM</div></div>
   <div class="nav">
     <button class="nav-btn active" data-view="studio">Studio IA</button>
-    <button class="nav-btn" data-view="cola">Cola <span id="cola-count" class="tag" style="display:none">0</span></button>
+    <button class="nav-btn" data-view="cola">Cola <span id="cola-count" style="margin-left:8px;background:#FFD700;color:#000;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;display:none">0</span></button>
     <button class="nav-btn" data-view="biblioteca">Biblioteca</button>
     <button class="nav-btn" data-view="blog">Blog</button>
     <button class="nav-btn" data-view="regalos">Regalos</button>
-    <button class="nav-btn" data-view="config">⚙️ Config</button>
+    <button class="nav-btn" data-view="config">Config</button>
   </div>
   <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#5A657A;line-height:1.5">
     inversionesjm.pe@gmail.com<br>+51 943983596<br>
     <a href="https://wa.me/51943983596" target="_blank" style="display:block;margin-top:10px;background:#FFD700;color:#000;text-align:center;padding:9px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none">WhatsApp Directo</a>
-    <div id="status-api" style="margin-top:10px;font-size:11px"></div>
+    <div id="status-dot" style="margin-top:12px"><span class="dot" id="dot-ia"></span><span id="txt-ia" style="font-size:11px">IA lista</span></div>
   </div>
 </div>
 
 <div class="main">
-  <!-- STUDIO -->
   <div id="view-studio">
-    <div class="header"><h1>Studio IA</h1><span class="badge">v7 - Cerebro Activo - Sin borrar nada</span></div>
+    <div class="header"><h1>Studio IA</h1><div class="sub">Crea contenido que vende, sin ser experto. Cantidad libre.</div></div>
     <div class="input-row">
-      <input class="input-tema" id="tema" placeholder="Escribe tu tema: ej. criptomonedas que están acumulando y próximas a subir">
-      <input class="input-cant" id="cantidad" type="number" min="1" step="1" placeholder="Cantidad: 1,2,3...20">
+      <input class="input-tema" id="tema" placeholder="Ej: criptomonedas que están acumulando y próximas a subir">
+      <input class="input-cant" id="cantidad" type="number" min="1" max="50" value="10" placeholder="10">
       <button class="btn-gold" id="btn-generar" onclick="generar()">Generar ideas</button>
     </div>
     <div class="grid">
-      <div class="card"><div class="card-head">Ideas <button class="btn-dark" onclick="limpiarIdeas()">Limpiar</button></div><div class="card-body" id="ideas-body">Escribe un tema arriba para empezar. Cantidad libre: puedes poner 1,2,3,4,5... hasta 50</div></div>
-      <div class="card"><div class="card-head">Guion</div><div class="card-body" id="guion-body">Tu guion aparecerá aquí cuando elijas una idea</div></div>
-      <div class="card"><div class="card-head">Video / Carrusel</div><div class="card-body" id="video-body">Tu video aparecerá aquí. Marca INVERSIONESJM incluida.</div></div>
-      <div class="card"><div class="card-head">Publicar</div><div class="card-body" id="publicar-body">Elige una idea para programar. Horarios Perú: 08:00 / 13:30 / 19:00</div></div>
+      <div class="card"><div class="card-head">Ideas <button class="btn-dark" onclick="limpiarIdeas()">Limpiar</button></div><div class="card-body" id="ideas-body">Escribe un tema y cuántas ideas quieres. Ejemplo: 5, 10, 20... tú decides.</div></div>
+      <div class="card"><div class="card-head">Guion</div><div class="card-body" id="guion-body">Elige una idea para ver su guion viral listo para grabar.</div></div>
+      <div class="card"><div class="card-head">Video / Carrusel</div><div class="card-body" id="video-body">Tu guion convertido en video vertical con tu marca.</div></div>
+      <div class="card"><div class="card-head">Publicar</div><div class="card-body" id="publicar-body">Publica ahora o prográmalo para 08:00 / 13:30 / 19:00 hora Perú.</div></div>
     </div>
     <div class="footer">
-      <a onclick="openModal('terminos')">Términos y Condiciones</a>
-      <a onclick="openModal('privacidad')">Política de Privacidad</a>
-      <a onclick="openModal('descargo')">Descargo de Responsabilidad</a>
+      <a onclick="openModal('terminos')">Términos</a>
+      <a onclick="openModal('privacidad')">Privacidad</a>
+      <a onclick="openModal('descargo')">Descargo</a>
       <a onclick="openModal('contacto')">Contacto</a>
-      <span style="margin-left:auto">© 2026 INVERSIONESJM - v7 mejoras sin borrar nada</span>
+      <span style="margin-left:auto">© 2026 INVERSIONESJM</span>
     </div>
   </div>
 
-  <!-- COLA -->
   <div id="view-cola" style="display:none">
-    <div class="header"><h1>Cola de Publicación</h1><span class="badge">Auto: GitHub → Netlify</span></div>
-    <div class="card"><div class="card-head">Programadas (08:00 / 13:30 / 19:00 PET)</div><div class="card-body" id="cola-body">Aún no hay publicaciones programadas. Genera ideas en Studio y dale "Enviar a Cola"</div></div>
+    <div class="header"><h1>Cola</h1><div class="sub">Publicación automática y manual como en el demo.</div></div>
+    <div class="card"><div class="card-head">Programadas</div><div class="card-body" id="cola-body">Aún no hay nada programado. Genera una idea y envíala aquí.</div></div>
   </div>
 
-  <!-- BIBLIOTECA -->
-  <div id="view-biblioteca" style="display:none">
-    <div class="header"><h1>Biblioteca</h1></div>
-    <div class="card"><div class="card-head">Guardadas</div><div class="card-body" id="bib-body">Tu biblioteca está vacía. Todo lo que generes se guarda automático aquí (local).</div></div>
-  </div>
+  <div id="view-biblioteca" style="display:none"><div class="header"><h1>Biblioteca</h1></div><div class="card"><div class="card-head">Guardadas</div><div class="card-body" id="bib-body">Vacía por ahora.</div></div></div>
+  <div id="view-blog" style="display:none"><div class="header"><h1>Blog</h1></div><div class="card"><div class="card-head">Artículos</div><div class="card-body" id="blog-body">Vacío. Crea desde el guion.</div></div></div>
+  <div id="view-regalos" style="display:none"><div class="header"><h1>Regalos</h1></div><div class="card"><div class="card-head">Plantillas</div><div class="card-body" id="regalos-body">Vacío. Crea desde el guion.</div></div></div>
 
-  <!-- BLOG -->
-  <div id="view-blog" style="display:none">
-    <div class="header"><h1>Blog - SEO para AdSense</h1></div>
-    <div class="card"><div class="card-head">Artículos</div><div class="card-body" id="blog-body">Aún no hay artículos. Cuando generes un guion dale "Crear Blog"</div></div>
-  </div>
-
-  <!-- REGALOS -->
-  <div id="view-regalos" style="display:none">
-    <div class="header"><h1>Regalos - Landing / PDF anclado</h1></div>
-    <div class="card"><div class="card-head">Landings</div><div class="card-body" id="regalos-body">Aún no hay landings. Crea desde un guion. PDF se sube a /pdfs/ en GitHub y aparece en /pdfs/tu-archivo.pdf</div></div>
-  </div>
-
-  <!-- CONFIG -->
   <div id="view-config" style="display:none">
-    <div class="header"><h1>Configuración - Cerebro y Auto-publicación</h1><span class="badge">Se guarda en tu navegador + GitHub</span></div>
+    <div class="header"><h1>Configuración</h1><div class="sub">Conecta tu inteligencia y tus canales. Solo tú ves esto.</div></div>
     <div class="config-grid">
       <div class="config-card">
-        <h3>1. Cerebro IA - Gemini Gratis</h3>
-        <p>Para generar ideas reales. No gasta créditos de Netlify porque corre en tu navegador.<br>Consigue gratis en: aistudio.google.com/app/apikey</p>
-        <input class="config-input" id="gemini-key" type="password" placeholder="Pega aquí tu GEMINI_API_KEY">
-        <button class="btn-dark" onclick="guardarGemini()">Guardar Gemini Key</button>
-        <p class="small" style="margin-top:10px" id="gemini-status">Estado: sin configurar - usando modo demo inteligente</p>
+        <h3>Inteligencia Artificial</h3>
+        <p>Conecta tu clave para generar ideas reales. Si no tienes, funciona igual con ideas inteligentes.</p>
+        <input class="config-input" id="gemini-key" type="password" placeholder="Pega tu clave de Gemini aquí">
+        <button class="btn-dark" onclick="guardarGemini()">Guardar clave</button>
+        <div class="small" style="margin-top:12px" id="gemini-status">Sin configurar - modo inteligente activo</div>
       </div>
       <div class="config-card">
-        <h3>2. Telegram Auto-Publicación (Gratis)</h3>
-        <p>Publica automático sin gastar créditos. Crea bot con @BotFather en Telegram.</p>
-        <input class="config-input" id="tg-token" placeholder="Bot Token: 123456:ABC...">
-        <input class="config-input" id="tg-chat" placeholder="Chat ID o @canal: @inversionesjm">
-        <button class="btn-dark" onclick="guardarTelegram()">Guardar Telegram</button>
-        <p class="small" style="margin-top:10px" id="tg-status">Estado: sin configurar</p>
-      </div>
-      <div class="config-card">
-        <h3>3. GitHub → Netlify Automático</h3>
-        <p>Ya está activo. No toques nada.<br>Cuando editas en GitHub, Netlify publica solo en 40 seg.<br>Ruta: Netlify > Site configuration > Build & deploy > Auto publishing: Enabled</p>
-        <p class="small" style="margin-top:8px">Repo: tiosamville/inversionesjm - Branch: main - Publish: .</p>
-      </div>
-      <div class="config-card">
-        <h3>4. PDFs Anclados</h3>
-        <p>Sube en GitHub: Add file > Create new file > escribe <b>pdfs/mi-regalo.pdf</b><br>Luego tu link será: autopublicjm.netlify.app/pdfs/mi-regalo.pdf</p>
-        <p class="small">Carpetas blog y pdfs no aparecen si están vacías - es normal en GitHub, se crean solas al subir archivo.</p>
+        <h3>Canales</h3>
+        <p>Activa donde quieres publicar. Automático o manual, como en el demo.</p>
+        <div class="canal"><span><span class="dot on"></span>Telegram Canal</span><button class="btn-dark" onclick="document.getElementById('tg-box').style.display=document.getElementById('tg-box').style.display==='none'?'block':'none'">Configurar</button></div>
+        <div id="tg-box" style="display:none;margin:10px 0">
+          <input class="config-input" id="tg-token" placeholder="Bot Token">
+          <input class="config-input" id="tg-chat" placeholder="@tu_canal">
+          <button class="btn-dark" onclick="guardarTelegram()">Guardar</button>
+          <div class="small" id="tg-status" style="margin-top:8px">Sin conectar</div>
+        </div>
+        <div class="canal"><span><span class="dot"></span>Facebook Reels</span><span class="small">Próximamente</span></div>
+        <div class="canal"><span><span class="dot"></span>Instagram Reels / Estados</span><span class="small">Próximamente</span></div>
+        <div class="canal"><span><span class="dot"></span>YouTube Shorts</span><span class="small">Próximamente</span></div>
+        <div class="canal"><span><span class="dot"></span>TikTok</span><span class="small">Próximamente</span></div>
+        <div class="canal"><span><span class="dot"></span>WhatsApp Canal</span><span class="small">Próximamente</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- LEGALES -->
-<div class="modal" id="modal-terminos"><div class="modal-box">
-<h2>Términos y Condiciones</h2><div class="c">INVERSIONESJM | inversionesjm.pe@gmail.com | +51 943983596 | Lima, Perú</div>
-<h3>1. Titular</h3><p>INVERSIONESJM, proyecto de educación financiera. No somos banco, financiera, SAF ni entidad regulada por SBS, SMV o BCRP.</p>
-<h3>2. Propiedad Intelectual</h3><p>Marca INVERSIONESJM, videos, plantillas y código son propiedad exclusiva.</p>
-<h3>3. Uso Correcto</h3><p>Mayor de 18 años. Prohibido fraude, spam, hacking.</p>
-<h3>4. Afiliados</h3><p>Podemos incluir enlaces afiliados sin costo extra para ti.</p>
-<h3>5. Ley Aplicable</h3><p>Ley peruana. Jurisdicción Lima. Actualizado 10/08/2026.</p>
-<button class="btn-close" onclick="closeModal('terminos')">Cerrar</button>
-</div></div>
-
-<div class="modal" id="modal-privacidad"><div class="modal-box">
-<h2>Política de Privacidad - Ley 29733 Perú</h2><div class="c">Responsable: INVERSIONESJM - inversionesjm.pe@gmail.com</div>
-<h3>Datos</h3><p>Nombre, email, WhatsApp, IP, cookies. No pedimos claves bancarias.</p>
-<h3>Uso</h3><ul><li>Enviar plantillas solicitadas</li><li>Soporte WhatsApp +51 943983596</li><li>Mejora web y AdSense</li></ul>
-<h3>Cookies AdSense</h3><p>Google AdSense / DoubleClick DART usa cookies para anuncios. Puedes rechazar en navegador. policies.google.com/technologies/ads</p>
-<h3>Derechos ARCO</h3><p>Escríbenos a inversionesjm.pe@gmail.com asunto ARCO. Respuesta 10 días hábiles.</p>
-<button class="btn-close" onclick="closeModal('privacidad')">Cerrar</button>
-</div></div>
-
-<div class="modal" id="modal-descargo"><div class="modal-box">
-<h2>Descargo de Responsabilidad Financiera</h2><div class="c">INVERSIONESJM - Solo educativo</div>
-<p><strong>ADVERTENCIA: NO somos asesor financiero autorizado, no somos banco, no SAF, no supervisado por SBS, SMV ni BCRP.</strong></p>
-<h3>Solo educativo</h3><p>Todo contenido es informativo, no recomendación de compra/venta.</p>
-<h3>Riesgo alto</h3><p>Criptos pueden perder valor total. Volatilidad alta. Puedes perder todo tu capital.</p>
-<h3>Tu responsabilidad</h3><p>Tú decides tus inversiones. Consulta profesional certificado.</p>
-<button class="btn-close" onclick="closeModal('descargo')">Cerrar</button>
-</div></div>
-
-<div class="modal" id="modal-contacto"><div class="modal-box">
-<h2>Contacto y Soporte</h2><div class="c">Respuesta 24h hábiles</div>
-<p><strong>Email:</strong> inversionesjm.pe@gmail.com</p>
-<p><strong>WhatsApp:</strong> +51 943983596 - <a href="https://wa.me/51943983596" target="_blank" style="color:#FFD700">Abrir WhatsApp</a></p>
-<p><strong>Instagram:</strong> @inversionesjm.pe</p>
-<p><strong>Horario:</strong> Lunes a Viernes 9:00-18:00 PET Lima</p>
-<button class="btn-close" onclick="closeModal('contacto')">Cerrar</button>
-</div></div>
+<div class="modal" id="modal-terminos"><div class="modal-box"><h2 style="color:#fff">Términos</h2><p style="color:#8A94A8;margin-top:10px">INVERSIONESJM - Educación financiera. No banco, no SAF, no regulado por SBS/SMV. Lima Perú. inversionesjm.pe@gmail.com / +51 943983596</p><button class="btn-dark" style="margin-top:14px" onclick="closeModal('terminos')">Cerrar</button></div></div>
+<div class="modal" id="modal-privacidad"><div class="modal-box"><h2 style="color:#fff">Privacidad Ley 29733</h2><p style="color:#8A94A8;margin-top:10px">Datos: email, WhatsApp. Uso: enviar plantillas. Derechos ARCO: inversionesjm.pe@gmail.com. Cookies AdSense: policies.google.com/technologies/ads</p><button class="btn-dark" style="margin-top:14px" onclick="closeModal('privacidad')">Cerrar</button></div></div>
+<div class="modal" id="modal-descargo"><div class="modal-box"><h2 style="color:#fff">Descargo</h2><p style="color:#8A94A8;margin-top:10px"><b style="color:#FFD700">ADVERTENCIA:</b> Solo educativo, no asesoría financiera. Criptos riesgo alto, puedes perder todo. No somos SBS/SMV/BCRP.</p><button class="btn-dark" style="margin-top:14px" onclick="closeModal('descargo')">Cerrar</button></div></div>
+<div class="modal" id="modal-contacto"><div class="modal-box"><h2 style="color:#fff">Contacto</h2><p style="color:#8A94A8;margin-top:10px">inversionesjm.pe@gmail.com<br>+51 943983596<br><a href="https://wa.me/51943983596" style="color:#FFD700">WhatsApp</a></p><button class="btn-dark" style="margin-top:14px" onclick="closeModal('contacto')">Cerrar</button></div></div>
 
 <script>
-// --- ESTADO LOCAL (no borra nada, solo agrega) ---
 let ideas = JSON.parse(localStorage.getItem('jm_ideas')||'[]');
 let cola = JSON.parse(localStorage.getItem('jm_cola')||'[]');
-let biblioteca = JSON.parse(localStorage.getItem('jm_bib')||'[]');
+let bib = JSON.parse(localStorage.getItem('jm_bib')||'[]');
 
-function saveAll(){
-  localStorage.setItem('jm_ideas', JSON.stringify(ideas));
-  localStorage.setItem('jm_cola', JSON.stringify(cola));
-  localStorage.setItem('jm_bib', JSON.stringify(biblioteca));
-  updateCounts();
+function save(){localStorage.setItem('jm_ideas',JSON.stringify(ideas));localStorage.setItem('jm_cola',JSON.stringify(cola));localStorage.setItem('jm_bib',JSON.stringify(bib));upd()}
+function upd(){
+ const c=document.getElementById('cola-count'); if(cola.length>0){c.style.display='inline';c.textContent=cola.length}else c.style.display='none';
+ const gk=localStorage.getItem('jm_gemini_key'); document.getElementById('dot-ia').className=gk?'dot on':'dot'; document.getElementById('txt-ia').textContent=gk?'IA conectada':'IA lista';
+ const gs=document.getElementById('gemini-status'); if(gs) gs.textContent=gk?'Conectada - genera ideas reales':'Sin configurar - modo inteligente activo';
+ const tt=localStorage.getItem('jm_tg_token'); const st=document.getElementById('tg-status'); if(st) st.textContent=tt?('Conectado: '+(localStorage.getItem('jm_tg_chat')||'')):'Sin conectar';
 }
-function updateCounts(){
-  const cc=document.getElementById('cola-count');
-  if(cola.length>0){cc.style.display='inline';cc.textContent=cola.length}else cc.style.display='none';
-  const st=document.getElementById('status-api');
-  const gk=localStorage.getItem('jm_gemini_key');
-  st.innerHTML = gk ? '🟢 Cerebro: Gemini conectado' : '🟡 Cerebro: modo demo inteligente';
-}
-
-// --- NAV ---
 document.querySelectorAll('.nav-btn').forEach(b=>{
- b.addEventListener('click',()=>{
-  document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  document.querySelectorAll('[id^=view-]').forEach(v=>v.style.display='none');
-  document.getElementById('view-'+b.dataset.view).style.display='block';
- })
+ b.onclick=()=>{document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('[id^=view-]').forEach(v=>v.style.display='none');document.getElementById('view-'+b.dataset.view).style.display='block';}
 });
 
-// --- GENERAR IDEAS (Cerebro real si hay key, demo inteligente si no) ---
 async function generar(){
- const tema = document.getElementById('tema').value.trim();
- const cantidad = parseInt(document.getElementById('cantidad').value);
+ const tema=document.getElementById('tema').value.trim();
+ const cant=parseInt(document.getElementById('cantidad').value)||10;
  if(!tema){alert('Escribe un tema');return}
- if(!cantidad || cantidad<1){alert('Pon cantidad: 1,2,3,4...');return}
- const btn=document.getElementById('btn-generar');
- btn.disabled=true; btn.textContent='Generando...';
- const body=document.getElementById('ideas-body');
- body.innerHTML='🧠 Generando '+cantidad+' ideas para: <b>'+tema+'</b><br><br>Conectando con cerebro...';
-
- const geminiKey = localStorage.getItem('jm_gemini_key');
- let generadas = [];
+ const btn=document.getElementById('btn-generar'); btn.disabled=true; btn.textContent='Generando...';
+ const body=document.getElementById('ideas-body'); body.innerHTML='Generando '+cant+' ideas para: <b style="color:#fff">'+tema+'</b>...';
+ let out=[];
+ const key=localStorage.getItem('jm_gemini_key');
  try{
-   if(geminiKey){
-     const prompt = `Eres experto en finanzas personales, ahorro y criptomonedas para Perú (INVERSIONESJM). Tema: "${tema}". Genera ${cantidad} ideas virales para TikTok/Reels/YouTube Shorts. Cada idea en formato: Título corto | Gancho 3 seg | Explicación 2 líneas. En español peruano, sin tecnicismos. Devuelve lista numerada.`;
-     const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key='+geminiKey,{
-       method:'POST',
-       headers:{'Content-Type':'application/json'},
-       body: JSON.stringify({contents:[{parts:[{text:prompt}]}]})
-     });
-     const data = await res.json();
-     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-     if(text){
-       generadas = text.split('\n').filter(l=>l.trim().length>10).slice(0,cantidad).map((t,i)=>({id:Date.now()+i, titulo:t.replace(/^\d+[\.\)]\s*/,'').substring(0,120), tema:tema}));
-     }
-   }
-   if(generadas.length===0){
-     // Demo inteligente (no borra nada, mejora lo que ya funciona)
-     const bases = [
-       `3 señales que ${tema} está por subir`,
-       `${tema}: lo que nadie te dice`,
-       `Cómo ganar con ${tema} sin perder todo`,
-       `Error que 90% comete con ${tema}`,
-       `${tema} en soles: cuánto necesitas realmente`,
-       `BCP vs ${tema}: dónde conviene ahorrar`,
-       `Yape y ${tema}: truco que pocos usan`,
-       `${tema} para principiantes en Perú`
-     ];
-     for(let i=0;i<cantidad;i++){
-       const base = bases[i % bases.length];
-       generadas.push({id:Date.now()+i, titulo:`${i+1}. ${base}`, tema:tema});
-     }
-   }
-   ideas = generadas;
-   saveAll();
-   renderIdeas();
-   body.innerHTML = ''; // limpiado por render
- }catch(e){
-   console.error(e);
-   body.innerHTML = 'Error con Gemini, usando demo inteligente.<br><br>';
-   // fallback demo igual
-   ideas = [];
-   for(let i=0;i<cantidad;i++) ideas.push({id:Date.now()+i, titulo:`${i+1}. Idea sobre ${tema} - parte ${i+1}`, tema:tema});
-   saveAll(); renderIdeas();
- }finally{
-   btn.disabled=false; btn.textContent='Generar ideas';
+  if(key){
+    const prompt=`Eres copywriter peruano de finanzas para INVERSIONESJM. Tema: "${tema}". Genera exactamente ${cant} ideas virales para Reels/Shorts/TikTok. Formato por línea: TÍTULO - Gancho. Solo lista numerada, sin explicación extra. En español Perú, corto, vendible.`;
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key='+key,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.9,maxOutputTokens:1500}})});
+    const j=await r.json();
+    if(j.error){throw new Error(j.error.message)}
+    const txt=j?.candidates?.[0]?.content?.parts?.[0]?.text||'';
+    console.log('Gemini:',txt);
+    const lines=txt.split('\n').map(l=>l.trim()).filter(l=>l.length>8);
+    lines.slice(0,cant).forEach((l,i)=>{out.push({id:Date.now()+i,titulo:l.replace(/^\d+[\.\-\)\s]*/,'').slice(0,140),tema})});
+  }
+ }catch(e){console.error(e); body.innerHTML='Error IA: '+e.message+'<br>Usando modo inteligente...';}
+ if(out.length===0){
+  const plantillas=[
+   `3 señales que ${tema} va a subir esta semana`,
+   `${tema}: el error que te hace perder plata`,
+   `Cuánto necesitas para empezar con ${tema} en Perú`,
+   `${tema} vs ahorrar en BCP: qué conviene`,
+   `Cómo usar ${tema} sin que te estafen`,
+   `Yape y ${tema}: el truco que nadie te dice`,
+   `${tema} para principiantes en soles`,
+   `Por qué ${tema} está acumulando ahora`
+  ];
+  for(let i=0;i<cant;i++){out.push({id:Date.now()+i,titulo:`${i+1}. ${plantillas[i%plantillas.length]}`,tema})}
  }
+ ideas=out; save(); renderIdeas(); btn.disabled=false; btn.textContent='Generar ideas';
 }
 
 function renderIdeas(){
-  const body=document.getElementById('ideas-body');
-  if(ideas.length===0){body.innerHTML='Escribe un tema arriba para empezar. Cantidad libre: 1,2,3,4,5...';return}
-  body.innerHTML = ideas.map(it=>`
-    <div class="idea-item" onclick="seleccionarIdea(${it.id})">
-      <b>${it.titulo}</b>
-      <span class="small">Tema: ${it.tema} • Click para ver guion</span>
-      <div style="margin-top:8px;display:flex;gap:6px">
-        <button class="btn-dark" style="font-size:11px" onclick="event.stopPropagation();enviarACola(${it.id})">Enviar a Cola</button>
-        <button class="btn-dark" style="font-size:11px" onclick="event.stopPropagation();guardarBib(${it.id})">Biblioteca</button>
-      </div>
-    </div>
-  `).join('');
+ const body=document.getElementById('ideas-body');
+ if(ideas.length===0){body.innerHTML='Escribe un tema y cuántas ideas quieres. Ejemplo: 5, 10, 20...';return}
+ body.innerHTML=ideas.map(it=>`<div class="idea-item" onclick="sel(${it.id})"><b>${it.titulo}</b><span class="small">Tema: ${it.tema}</span><div style="margin-top:8px;display:flex;gap:6px"><button class="btn-dark" onclick="event.stopPropagation();toCola(${it.id})">Enviar a Cola</button><button class="btn-dark" onclick="event.stopPropagation();toBib(${it.id})">Biblioteca</button></div></div>`).join('');
 }
-
-function seleccionarIdea(id){
-  const it = ideas.find(x=>x.id===id) || biblioteca.find(x=>x.id===id) || cola.find(x=>x.id===id);
-  if(!it)return;
-  document.getElementById('guion-body').innerHTML = `
-    <b style="color:#fff">${it.titulo}</b><br><br>
-    <span style="color:#FFD700">GANCHO (0-3s):</span> ¿Sabías que ${it.tema} puede hacer esto?<br><br>
-    <span style="color:#FFD700">CUERPO:</span> En Perú, mucha gente pierde plata por no entender ${it.tema}. Te explico en 30 seg cómo evaluarlo sin ser experto...<br><br>
-    <span style="color:#FFD700">CIERRE:</span> Guarda este video y sígueme @inversionesjm.pe - Link PDF en bio.<br><br>
-    <button class="btn-dark" onclick="crearBlog(${it.id})">Crear Blog SEO</button>
-    <button class="btn-dark" onclick="crearRegalo(${it.id})">Crear Regalo Landing</button>
-  `;
-  document.getElementById('video-body').innerHTML = `
-    <b style="color:#fff">Video vertical 9:16</b><br>
-    Fondo: oscuro con marca INVERSIONESJM<br>
-    Texto: ${it.titulo}<br>
-    Contacto: inversionesjm.pe@gmail.com / +51 943983596<br><br>
-    <button class="btn-dark">Descargar guion</button>
-  `;
-  document.getElementById('publicar-body').innerHTML = `
-    Listo para programar: <b style="color:#fff">${it.titulo}</b><br><br>
-    Horarios Perú: 08:00 / 13:30 / 19:00<br><br>
-    <button class="btn-gold" onclick="enviarACola(${it.id})">Enviar a Cola automática</button>
-  `;
+function sel(id){
+ const it=ideas.find(x=>x.id===id)||bib.find(x=>x.id===id)||cola.find(x=>x.id===id); if(!it)return;
+ document.getElementById('guion-body').innerHTML=`<b style="color:#fff">${it.titulo}</b><br><br><span style="color:#FFD700">GANCHO:</span> ¿${it.tema} te está haciendo perder?<br><br><span style="color:#FFD700">CUERPO:</span> Te muestro en 30 seg lo que 90% no ve de ${it.tema} en Perú...<br><br><span style="color:#FFD700">CTA:</span> Guarda y sigue @inversionesjm.pe<br><br><button class="btn-dark" onclick="crearBlog(${it.id})">Crear Blog</button> <button class="btn-dark" onclick="crearRegalo(${it.id})">Crear Regalo</button>`;
+ document.getElementById('video-body').innerHTML=`Video 9:16<br><b style="color:#fff">${it.titulo}</b><br>Marca INVERSIONESJM<br>Contacto: inversionesjm.pe@gmail.com<br><br><button class="btn-dark">Guion listo</button>`;
+ document.getElementById('publicar-body').innerHTML=`Listo: <b style="color:#fff">${it.titulo}</b><br><br><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-gold" onclick="publicarAhora(${it.id})">Publicar ahora (Manual)</button><button class="btn-dark" onclick="toCola(${it.id})">Programar 08:00/13:30/19:00 (Auto)</button></div><div class="small" style="margin-top:10px">Manual = demo como mostraste. Auto = Cola</div>`;
 }
-
-function enviarACola(id){
-  const it = ideas.find(x=>x.id===id);
-  if(!it)return;
-  const horas=['08:00','13:30','19:00'];
-  const hora = horas[cola.length % 3];
-  cola.push({...it, hora:hora, fecha:new Date().toLocaleDateString()});
-  saveAll(); renderCola();
-  alert('Enviado a Cola para '+hora+' PET');
+function toCola(id){const it=ideas.find(x=>x.id===id); if(!it)return; const horas=['08:00','13:30','19:00']; const h=horas[cola.length%3]; cola.push({...it,hora:h,fecha:new Date().toLocaleDateString()}); save(); renderCola(); alert('Enviado a Cola '+h);}
+function toBib(id){const it=ideas.find(x=>x.id===id); if(!it)return; bib.push(it); save(); renderBib(); alert('Guardado');}
+function renderCola(){const b=document.getElementById('cola-body'); if(cola.length===0){b.innerHTML='Aún no hay nada programado. Genera una idea y envíala aquí.';return} b.innerHTML=cola.map(c=>`<div class="idea-item"><b>${c.titulo}</b><span class="small">${c.fecha} - ${c.hora} PET • Manual o Auto como en demo</span><div style="margin-top:6px"><button class="btn-dark" onclick="publicarAhora(${c.id})">Publicar ahora</button></div></div>`).join('');}
+function renderBib(){const b=document.getElementById('bib-body'); if(bib.length===0){b.innerHTML='Vacía por ahora.';return} b.innerHTML=bib.map(c=>`<div class="idea-item" onclick="sel(${c.id})"><b>${c.titulo}</b><span class="small">Guardado</span></div>`).join('');}
+function limpiarIdeas(){ideas=[];save();renderIdeas()}
+function crearBlog(id){const it=ideas.find(x=>x.id===id); if(!it)return; document.getElementById('blog-body').innerHTML+=`<div class="idea-item"><b>Blog: ${it.titulo}</b><span class="small">/blog/${it.id}.html</span></div>`}
+function crearRegalo(id){const it=ideas.find(x=>x.id===id); if(!it)return; document.getElementById('regalos-body').innerHTML+=`<div class="idea-item"><b>Regalo: ${it.titulo}</b><span class="small">/pdfs/</span></div>`}
+function publicarAhora(id){
+ const it=ideas.find(x=>x.id===id)||cola.find(x=>x.id===id); if(!it)return;
+ const tt=localStorage.getItem('jm_tg_token'); const tc=localStorage.getItem('jm_tg_chat');
+ if(tt&&tc){
+  fetch(`https://api.telegram.org/bot${tt}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:tc,text:`🚀 INVERSIONESJM\n\n${it.titulo}\n\nTema: ${it.tema}\n\nContacto: inversionesjm.pe@gmail.com\nWhatsApp: +51 943983596`})}).then(r=>r.json()).then(j=>{if(j.ok)alert('Publicado en Telegram: '+tc); else alert('Error Telegram: '+(j.description||'revisa token/chat'));}).catch(()=>alert('Error red Telegram'));
+ }else{
+  alert('Manual (demo): '+it.titulo+'\n\nEsto es como en el demo que mostraste. Para publicar real, configura Telegram en Config. Luego Facebook Reels, Instagram Estados, YouTube Shorts, TikTok y WhatsApp Canal se activan igual.');
+ }
 }
-function guardarBib(id){
-  const it = ideas.find(x=>x.id===id);
-  if(!it)return;
-  biblioteca.push(it); saveAll(); renderBib();
-  alert('Guardado en Biblioteca');
-}
-function renderCola(){
-  const b=document.getElementById('cola-body');
-  if(cola.length===0){b.innerHTML='Aún no hay publicaciones programadas. Genera ideas en Studio y dale "Enviar a Cola"';return}
-  b.innerHTML = cola.map(c=>`<div class="idea-item"><b>${c.titulo}</b><span class="small">${c.fecha} - ${c.hora} PET • Auto: GitHub → Netlify → Telegram (si configuras)</span></div>`).join('');
-}
-function renderBib(){
-  const b=document.getElementById('bib-body');
-  if(biblioteca.length===0){b.innerHTML='Tu biblioteca está vacía. Todo lo que generes se guarda automático aquí (local).';return}
-  b.innerHTML = biblioteca.map(c=>`<div class="idea-item" onclick="seleccionarIdea(${c.id})"><b>${c.titulo}</b><span class="small">Guardado • Click para ver</span></div>`).join('');
-}
-function limpiarIdeas(){ideas=[];saveAll();renderIdeas()}
-function crearBlog(id){const it=ideas.find(x=>x.id===id);if(!it)return;document.getElementById('blog-body').innerHTML+=`<div class="idea-item"><b>Blog: ${it.titulo}</b><span class="small">SEO listo para /blog/ - Sube a GitHub /blog/${it.id}.html</span></div>`}
-function crearRegalo(id){const it=ideas.find(x=>x.id===id);if(!it)return;document.getElementById('regalos-body').innerHTML+=`<div class="idea-item"><b>Regalo: ${it.titulo}</b><span class="small">Landing lista + PDF en /pdfs/</span></div>`}
-
-// --- CONFIG ---
-function guardarGemini(){
-  const k=document.getElementById('gemini-key').value.trim();
-  if(!k){alert('Pega tu key');return}
-  localStorage.setItem('jm_gemini_key',k);
-  document.getElementById('gemini-status').textContent='🟢 Guardado - Cerebro conectado';
-  updateCounts();
-  alert('Gemini guardado. Ahora genera ideas reales.');
-}
-function guardarTelegram(){
-  const t=document.getElementById('tg-token').value.trim();
-  const c=document.getElementById('tg-chat').value.trim();
-  if(!t||!c){alert('Pon token y chat');return}
-  localStorage.setItem('jm_tg_token',t);
-  localStorage.setItem('jm_tg_chat',c);
-  document.getElementById('tg-status').textContent='🟢 Guardado: '+c;
-  alert('Telegram guardado. Publicará auto.');
-}
+function guardarGemini(){const k=document.getElementById('gemini-key').value.trim(); if(!k){alert('Pega tu clave');return} localStorage.setItem('jm_gemini_key',k); upd(); alert('Clave guardada. Ahora genera ideas reales.');}
+function guardarTelegram(){const t=document.getElementById('tg-token').value.trim(); const c=document.getElementById('tg-chat').value.trim(); if(!t||!c){alert('Pon token y canal');return} localStorage.setItem('jm_tg_token',t); localStorage.setItem('jm_tg_chat',c); upd(); alert('Telegram conectado: '+c);}
 (function init(){
-  const gk=localStorage.getItem('jm_gemini_key');
-  if(gk)document.getElementById('gemini-key').value=gk;
-  const tt=localStorage.getItem('jm_tg_token');
-  const tc=localStorage.getItem('jm_tg_chat');
-  if(tt)document.getElementById('tg-token').value=tt;
-  if(tc)document.getElementById('tg-chat').value=tc;
-  renderCola(); renderBib(); updateCounts();
-  if(ideas.length>0) renderIdeas();
+ const gk=localStorage.getItem('jm_gemini_key'); if(gk)document.getElementById('gemini-key').value=gk;
+ const tt=localStorage.getItem('jm_tg_token'); const tc=localStorage.getItem('jm_tg_chat'); if(tt)document.getElementById('tg-token').value=tt; if(tc)document.getElementById('tg-chat').value=tc;
+ renderCola(); renderBib(); upd(); if(ideas.length>0)renderIdeas();
 })();
-
-// Modales
 function openModal(id){document.getElementById('modal-'+id).classList.add('active')}
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('active')}
 document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')}))
